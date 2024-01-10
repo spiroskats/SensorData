@@ -16,7 +16,8 @@ import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChartsComponent } from './charts/charts.component';
-
+import { NgxEchartsModule } from 'ngx-echarts';
+import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [
@@ -26,8 +27,7 @@ import { ChartsComponent } from './charts/charts.component';
     MessagesComponent,
     DashboardComponent,
     SpinnerComponent,
-    ChartsComponent,
-    
+    ChartsComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +39,9 @@ import { ChartsComponent } from './charts/charts.component';
     MatIconModule,
     MatProgressSpinnerModule,
     HttpClientModule,
+    NgxEchartsModule.forRoot({
+      echarts: () => import('echarts')
+    }),
   ],
   providers: [{
     provide: HTTP_INTERCEPTORS,
