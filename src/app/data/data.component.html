@@ -1,0 +1,31 @@
+<h2>Sensor Data</h2>
+<ul class="datas">
+    <button mat-icon-button (click) = "navigateToHome($event)">
+        <mat-icon>home</mat-icon>
+    </button>
+    <table mat-table [dataSource]="datas">
+        <ng-container matColumnDef="id">
+            <th mat-header-cell *matHeaderCellDef> ID </th>
+            <td mat-cell *matCellDef="let data"><span class="dht_sensor_id font-class">{{data.id}}</span></td>
+        </ng-container>
+        <ng-container matColumnDef="temperature">
+            <th mat-header-cell *matHeaderCellDef> Tempearture </th>
+            <td mat-cell *matCellDef="let data"><span class="badge font-class" [ngClass]="data.temperature > 26.50 ? 'badge-hot' : ''">{{data.temperature}}</span></td>
+        </ng-container>
+        <ng-container matColumnDef="humidity">
+            <th mat-header-cell *matHeaderCellDef> Humidity </th>
+            <td mat-cell *matCellDef="let data"><span class="dht_sensor_id font-class">{{data.humidity}}</span></td>
+        </ng-container>
+        <tr mat-header-row *matHeaderRowDef="columnsToDisplay"></tr>
+        <tr mat-row *matRowDef="let myRowData; columns: columnsToDisplay"></tr>
+
+    </table>
+   <!-- <li *ngFor="let data of datas"> -->
+        <!-- <button [class.selected]="data === selectedData" type="button" (click)="onSelect(data)"> -->
+            <!-- <span class="badge font-class" [ngClass]="data.temperature > 26.50 ? 'badge-hot' : ''"> {{data.temperature}}</span> -->
+            <!-- <span class="dht_sensor_id font-class"> {{data.humidity}}</span> -->
+        <!-- </button> -->
+    <!-- </li>  -->
+
+</ul>
+

@@ -1,0 +1,6 @@
+<mat-nav-list>
+    <mat-list-item *ngFor="let sensor of sensors">
+        <mat-icon mat-list-icon style="transform: scale(2);">sensors</mat-icon>
+        <div mat-line (click)="navigateToSensor($event, sensor)" style="font-size: x-large;"> {{sensor.dht_sensor_name}}</div>   
+    </mat-list-item>
+</mat-nav-list>

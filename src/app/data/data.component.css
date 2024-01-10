@@ -1,0 +1,14 @@
+.badge{
+    color: green;
+
+}
+.badge-hot{
+    color: red;
+}
+.font-class{
+    font-size: 20px;
+    font-weight: 900;
+}
+table {
+    width: 100%;
+  }
