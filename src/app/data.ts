@@ -5,8 +5,4 @@ export interface Data{
     humidity: number;
     battery: number;
     created_on: string;
-
-
-
-    
 }

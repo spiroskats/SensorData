@@ -15,6 +15,7 @@ import { SpinnerComponent } from './spinner/spinner.component';
 import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { ChartsComponent } from './charts/charts.component';
 
 
 @NgModule({
@@ -25,6 +26,7 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
     MessagesComponent,
     DashboardComponent,
     SpinnerComponent,
+    ChartsComponent,
     
   ],
   imports: [
