@@ -17,7 +17,8 @@ import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxEchartsModule } from 'ngx-echarts';
-import * as echarts from 'echarts';
+import { MatButtonModule } from '@angular/material/button';
+// import * as echarts from 'echarts';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,13 @@ import * as echarts from 'echarts';
     useClass: LoaderInterceptor,
     multi: true
   }],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  exports: [
+    MatTableModule,
+    MatListModule,
+    MatButtonModule,
+    MatIconModule
+  ]
 })
 
 export class AppModule { }
