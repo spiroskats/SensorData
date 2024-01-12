@@ -5,6 +5,9 @@ import { DashboardService } from '../dashboard.service';
 import { Sensor } from '../sensor';
 import { AppComponent } from '../app.component';
 import { ActivatedRoute, Router } from '@angular/router';
+import { MatDialog } from '@angular/material/dialog';
+import { MatFormField } from '@angular/material/form-field';
+import { DialogComponent } from '../dialog/dialog.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -12,11 +15,12 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+
   sensors: Sensor[]=[];
   datas: Data[]=[];
   selectedSensor?: Sensor;
 
-  constructor(private dataService: DataService, private dashboardService: DashboardService, private router: Router, private route: ActivatedRoute) { }
+  constructor(public dialog: MatDialog, private dataService: DataService, private dashboardService: DashboardService, private router: Router, private route: ActivatedRoute) { }
 
   ngOnInit(): void {
     // this.getData();
@@ -37,4 +41,7 @@ export class DashboardComponent implements OnInit {
     this.router.navigate(['/sensors',sensor.id]);
     
   }
+  dialogToAdd($event: MouseEvent) {
+    this.dialog.open( DialogComponent )
+}
 }

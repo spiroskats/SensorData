@@ -18,6 +18,9 @@ import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChartsComponent } from './charts/charts.component';
 import { NgxEchartsModule } from 'ngx-echarts';
 import { MatButtonModule } from '@angular/material/button';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { DialogComponent } from './dialog/dialog.component';
 // import * as echarts from 'echarts';
 
 @NgModule({
@@ -28,7 +31,8 @@ import { MatButtonModule } from '@angular/material/button';
     MessagesComponent,
     DashboardComponent,
     SpinnerComponent,
-    ChartsComponent
+    ChartsComponent,
+    DialogComponent
   ],
   imports: [
     BrowserModule,
@@ -39,6 +43,8 @@ import { MatButtonModule } from '@angular/material/button';
     MatListModule,
     MatIconModule,
     MatProgressSpinnerModule,
+    MatDialogModule,
+    MatFormFieldModule,
     HttpClientModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
@@ -54,7 +60,9 @@ import { MatButtonModule } from '@angular/material/button';
     MatTableModule,
     MatListModule,
     MatButtonModule,
-    MatIconModule
+    MatIconModule,
+    MatDialogModule,
+    MatFormFieldModule
   ]
 })
 

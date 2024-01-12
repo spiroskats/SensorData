@@ -16,26 +16,35 @@ export class DataComponent implements OnInit {
   columnsToDisplay = ['id','temperature','humidity'];
   selectedData?: Data;
   datas : Data[] = [];
-  
+  loading: boolean = false;
   
   constructor( private dataService: DataService, private messageService: MessageService,private route: ActivatedRoute,private router: Router) { }
 
   ngOnInit(): void {
+    // console.log(this.route.snapshot.data['DataResolver']);
+    // this.datas=this.route.snapshot.data['DataResolver'];
     this.getData();
   }
   getData(): void{
-    const id: string | null = this.route.snapshot.paramMap.get('id');
-    if(id !== null){
-    this.dataService.getData(id).subscribe({
-      next: datas => {
-        this.datas = datas;
-      },
-      error: er => {
-        console.log('Kati kati')
-        console.log(er)
-      }
-      });
-    }
+    this.datas=this.route.snapshot.data['DataResolver'];
+    // this.loading=true;
+    // const id: string | null = this.route.snapshot.paramMap.get('id');
+    // if(id !== null){
+    // this.dataService.getData(id).subscribe({
+    //   next: datas => {
+    //     this.datas = datas;
+    //     // this.loading=false;
+    //   },
+    //   error: er => {
+    //     console.log('Kati kati')
+    //     console.log(er)
+    //     // this.loading=false;
+    //   },
+    //   complete: () => {
+    //     this.loading=false;
+    //   }
+    //   });
+    // }
   }
   navigateToHome($event: MouseEvent) {
     this.router.navigate(["/"])

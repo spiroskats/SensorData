@@ -28,4 +28,4 @@
     <!-- </li>  -->
 
 </div>
-<app-charts></app-charts>
+<app-charts *ngIf="!loading" [datas]="datas"></app-charts>
