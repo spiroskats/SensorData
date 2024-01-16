@@ -42,3 +42,8 @@ a {
   .mat_line{
     font-size: xx-large;
   }
+  .button-container-class {
+    display: flex;
+    gap: 1em;
+    flex-direction: column;
+  }

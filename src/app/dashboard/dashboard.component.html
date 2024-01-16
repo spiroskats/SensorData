@@ -1,9 +1,21 @@
-<button mat-icon-button (click) = "dialogToAdd($event)">
-    <mat-icon>add</mat-icon>
-</button>
+<div class="button-container-class">
+    <button mat-raised-button color="primary" (click) = "dialogToAdd($event)">
+        <span>Add</span>
+        <mat-icon>add</mat-icon>
+    </button>
+
+</div>
 <mat-nav-list>
     <mat-list-item *ngFor="let sensor of sensors">
         <mat-icon mat-list-icon style="transform: scale(2);">sensors</mat-icon>
-        <div mat-line (click)="navigateToSensor($event, sensor)" style="font-size: x-large;"> {{sensor.dht_sensor_name}}</div>   
+        <div mat-line (click)="navigateToSensor($event, sensor)" style="font-size: x-large;"> {{sensor.dht_sensor_name}}</div>
+        <button mat-raised-button color="accent" (click) = "dialogToEdit($event, sensor)">
+            <span>Edit</span>
+            <mat-icon>edit</mat-icon>
+        </button>
+        <button mat-raised-button color="warn" (click) = "dialogToRemove($event, sensor)">
+            <span>Delete</span>
+            <mat-icon>delete</mat-icon>
+        </button>
     </mat-list-item>
 </mat-nav-list>

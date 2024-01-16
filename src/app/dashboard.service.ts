@@ -13,7 +13,13 @@ export class DashboardService {
   constructor(
     private http: HttpClient
   ) { }
-
+  addSensor (sensor: Sensor): Observable<Sensor>{
+    return this.http.post<Sensor>(this.sensorUrl,sensor)
+  }
+  editSensor (sensor: Sensor): Observable<Sensor>{
+    
+    return this.http.put<Sensor>(this.sensorUrl+"/"+sensor.id,sensor)
+  }
   getSensors (): Observable<Sensor[]>{
     return this.http.get<Sensor[]>(this.sensorUrl);
   }

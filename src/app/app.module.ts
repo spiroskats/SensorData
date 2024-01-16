@@ -10,9 +10,9 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatTableModule } from '@angular/material/table';
 import { MatListModule } from '@angular/material/list';
-import {MatIconModule} from '@angular/material/icon';
+import { MatIconModule } from '@angular/material/icon';
 import { SpinnerComponent } from './spinner/spinner.component';
-import {MatProgressSpinnerModule} from '@angular/material/progress-spinner';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { LoaderInterceptor } from './interceptors/loader.interceptor';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { ChartsComponent } from './charts/charts.component';
@@ -21,6 +21,8 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { DialogComponent } from './dialog/dialog.component';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatInputModule } from '@angular/material/input';
 // import * as echarts from 'echarts';
 
 @NgModule({
@@ -32,7 +34,8 @@ import { DialogComponent } from './dialog/dialog.component';
     DashboardComponent,
     SpinnerComponent,
     ChartsComponent,
-    DialogComponent
+    DialogComponent,
+    
   ],
   imports: [
     BrowserModule,
@@ -42,10 +45,13 @@ import { DialogComponent } from './dialog/dialog.component';
     MatTableModule,
     MatListModule,
     MatIconModule,
+    MatButtonModule,
     MatProgressSpinnerModule,
     MatDialogModule,
     MatFormFieldModule,
     HttpClientModule,
+    ReactiveFormsModule,
+    MatInputModule,
     NgxEchartsModule.forRoot({
       echarts: () => import('echarts')
     }),
@@ -62,7 +68,9 @@ import { DialogComponent } from './dialog/dialog.component';
     MatButtonModule,
     MatIconModule,
     MatDialogModule,
-    MatFormFieldModule
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule,
   ]
 })
 

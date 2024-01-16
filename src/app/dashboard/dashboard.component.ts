@@ -16,6 +16,7 @@ import { DialogComponent } from '../dialog/dialog.component';
 })
 export class DashboardComponent implements OnInit {
 
+
   sensors: Sensor[]=[];
   datas: Data[]=[];
   selectedSensor?: Sensor;
@@ -42,6 +43,32 @@ export class DashboardComponent implements OnInit {
     
   }
   dialogToAdd($event: MouseEvent) {
-    this.dialog.open( DialogComponent )
-}
+    const dialogRef = this.dialog.open( DialogComponent )
+    dialogRef.afterClosed().subscribe(
+      {
+        next: result =>{
+          console.log("Dialog Closed")
+          console.log(result)
+          this.getSensors();
+        }
+      }
+    )
+  }
+
+  dialogToEdit($event: MouseEvent, sensor: Sensor) {
+    const dialogRef = this.dialog.open( DialogComponent,{data: {sensor: sensor}} )
+    dialogRef.afterClosed().subscribe(
+      {
+        next: result =>{
+          console.log("Dialog Closed")
+          console.log(result)
+          this.getSensors();
+        }
+      }
+    )
+  }
+
+  dialogToRemove($event: MouseEvent, sensor: Sensor) {
+    // this.dialog.open( DialogComponent )
+  }
 }
