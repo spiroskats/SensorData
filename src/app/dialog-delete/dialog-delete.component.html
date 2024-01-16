@@ -1,0 +1,6 @@
+<h1 mat-dialog-title>Delete Sensor</h1>
+<div mat-dialog-content>Are you sure you want to delete sensor {{data.sensor.dht_sensor_name}}</div>
+<div mat-dialog-actions>
+    <button mat-button (click)= "deleteSensor($event)">Delete Sensor</button>
+    <button mat-button mat-dialog-close>Close</button>
+</div>

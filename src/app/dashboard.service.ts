@@ -23,5 +23,8 @@ export class DashboardService {
   getSensors (): Observable<Sensor[]>{
     return this.http.get<Sensor[]>(this.sensorUrl);
   }
+  deleteSensor (sensor: Sensor): Observable<Sensor>{
+    return this.http.delete<Sensor>(this.sensorUrl+"/"+sensor.id)
+  }
 
 }

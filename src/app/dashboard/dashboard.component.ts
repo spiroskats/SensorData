@@ -8,6 +8,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MatDialog } from '@angular/material/dialog';
 import { MatFormField } from '@angular/material/form-field';
 import { DialogComponent } from '../dialog/dialog.component';
+import { DialogDeleteComponent } from '../dialog-delete/dialog-delete.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -69,6 +70,15 @@ export class DashboardComponent implements OnInit {
   }
 
   dialogToRemove($event: MouseEvent, sensor: Sensor) {
-    // this.dialog.open( DialogComponent )
+    const dialogRef = this.dialog.open( DialogDeleteComponent,{data: {sensor: sensor}} )
+    dialogRef.afterClosed().subscribe(
+      {
+        next: result =>{
+          console.log("Dialog Closed")
+          console.log(result)
+          this.getSensors();
+        }
+      }
+    )
   }
 }

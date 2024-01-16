@@ -23,6 +23,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { DialogComponent } from './dialog/dialog.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatInputModule } from '@angular/material/input';
+import { DialogDeleteComponent } from './dialog-delete/dialog-delete.component';
 // import * as echarts from 'echarts';
 
 @NgModule({
@@ -35,6 +36,7 @@ import { MatInputModule } from '@angular/material/input';
     SpinnerComponent,
     ChartsComponent,
     DialogComponent,
+    DialogDeleteComponent,
     
   ],
   imports: [
